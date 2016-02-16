@@ -1,0 +1,44 @@
+body {
+    background-color: #666;
+}
+p2 {
+      color: black;
+      font-family: "Courier New", Times, serif;
+      font-size: 30px
+      height: 20em;
+      position: relative
+}
+
+input[type=password] {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 16px;
+  background: #138565;
+  padding: 8px 20px 8px 20px;
+  text-decoration: none;
+}
+a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 16px;
+  background: #138565;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+a:hover {
+
+  background: #0bd6bb;
+  text-decoration: none;
+
+}
+input:hover {
+
+  background: #0bd6bb;
+  text-decoration: none;
+}

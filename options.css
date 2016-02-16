@@ -1,0 +1,138 @@
+body {
+    background: url(pics/b.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1{
+  color: white;
+  font-family: "Courier New", Times, serif;
+  font-size: 50px
+}
+.disabled{
+    color:black;
+    text-decoration: none;
+}
+.disableditem {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  display: none;
+  margin: 0;
+}
+.la {
+  cursor: pointer;
+}
+ul, form, p6 {
+  color: black;
+  font-family: "Courier New", Times, serif;
+  font-size: 30px
+}
+li {
+   list-style-type: none;
+}
+img {
+  margin: 3px;
+}
+.otherimg {
+  margin: 0;
+  border-radius: 0px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.container{
+  height: 90vh;
+  text-align: center;
+}
+.item {
+  border-radius: 3px;
+  width: 1200px;
+  height: 100px;
+  text-align: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  margin:10px;
+  padding: 5px;
+}
+.small {
+  border-radius: 3px;
+  width: 600px;
+  height: 100px;
+  text-align: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  margin:10px;
+}
+p {
+  color: #FFFFFF;
+  font-family: "Courier New", Times, serif;
+  font-size: 30px;
+}
+p2 {
+  background-color: #EAFF94;
+  padding: 2px;
+  color: black;
+  font-family: "Courier New", Times, serif;
+  font-size: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.online {
+  color: black;
+  font-family: "Courier New", Times, serif;
+  font-size: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #00FF00;
+  padding: 2px;
+}
+.offline {
+  color: black;
+  font-family: "Courier New", Times, serif;
+  font-size: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #FF8080;
+  padding: 2px;
+}
+
+.normala {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Courier New;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 2px;
+}
+.normala:hover {
+  background: #74FF51;
+}
+input[type="number"] {
+  font-size: 14px;
+  margin: 6px;
+}
+textarea {
+  width: 1089px;
+  margin: 6px;
+  height: 63px;
+}
+.a2 {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 16px;
+  background: #138565;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.a2:hover {
+  background: #0bd6bb;
+  text-decoration: none;
+}

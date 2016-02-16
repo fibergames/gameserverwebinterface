@@ -1,0 +1,107 @@
+body {
+  background: url(pics/b.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.disabled {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  display: none;
+  margin: 0;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+.item {
+  border-radius: 3px;
+  width: 500px;
+  height: 200px;
+  text-align: -webkit-center;
+}
+.normlabel {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 16px;
+  background: #138565;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.la {
+  cursor: pointer;
+  font-size: 30px;
+  font-family: "Courier New", Times, serif;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 2px;
+}
+.la:hover {
+  background-color: #5A00FF;
+}
+.icon {
+  padding: 3px;
+}
+.labelimg {
+  border-top: 15px;
+}
+.icon:hover {
+  background-color: white;
+  padding: 3px;
+}
+.normala {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 16px;
+  background: #138565;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.normala:hover {
+  background: #0bd6bb;
+  text-decoration: none;
+}
+.normlabel:hover {
+  background: #0bd6bb;
+  text-decoration: none;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-family: "Courier New", Times, serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+p {
+  color: #FFFFFF;
+  font-family: "Courier New", Times, serif;
+  font-size: 30px
+}
+.home {
+  cursor: pointer;
+  font-size: 30px;
+  font-family: "Courier New", Times, serif;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 2px;
+}
+.home:hover {
+  background-color: #5A00FF;
+}
+input[type="email"],input[type="password"] {
+  font-size: 19px;
+  margin: 5px;
+}
