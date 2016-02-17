@@ -56,7 +56,7 @@ $userid = $_SESSION['userid'];
 				} else {
 					$status = "offline";
 			}
-			if ($i == 6) {
+			if ($i == 4) {
 			echo '<br>';
 			}
 			echo '<div class="item" id="' . $i . '">';
@@ -98,7 +98,7 @@ $userid = $_SESSION['userid'];
 					} else {
 						$status = "offline";
 				}
-			if ($o == 6) {
+			if ($o == 4) {
 			echo '<br>';
 			}
 			echo '<div class="item" id="' . $o . '">';
