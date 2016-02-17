@@ -11,6 +11,13 @@
       <div class="container">
       <div class="item">
           <h1>CS Server Interface</h1>
+          <h1>News 17.2.2016</h1>
+          <p>-There is a bug report system. If you find serius bugs you can report them there.
+            Unfortunately there is no email programm connected. You have to send emails
+            manually if you want to report bugs.<br><br>
+            -Owners can now manage admins for their servers easily. But look out its so fast
+            and easy that a mistake happens fast.
+          </p>
           <a class="normala" href="login.php">Login</a>
           <link href="main.css" rel="stylesheet" type="text/css" />
       </div></div>
