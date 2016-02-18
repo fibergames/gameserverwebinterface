@@ -87,7 +87,15 @@ p2 {
   background-color: #FF8080;
   padding: 2px;
 }
-
+.update {
+  color: black;
+  font-family: "Courier New", Times, serif;
+  font-size: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #FFEF80;
+  padding: 2px;
+}
 .normala {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;

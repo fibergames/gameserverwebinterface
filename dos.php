@@ -54,7 +54,11 @@ $userid = $_SESSION['userid'];
 		//online status
 		if (strpos($outputls,$typus .$own[$i]["serverid"]) !== false) {
 					$status = "online";
-				} else {
+				}
+				elseif (strpos($outputls,$typus. 'update' .$own[$i]["serverid"]) !== false) {
+										$status = "update";
+									}
+				 else {
 					$status = "offline";
 			}
 			if ($i == 4) {
@@ -72,7 +76,7 @@ $userid = $_SESSION['userid'];
 		 <br>
 			<a class="disabled" href="start.php?serverid=' . $own[$i]["serverid"] . '"><img src="pics/play" width="30" height="30"></a>
 			<a class="disabled" href="stop.php?serverid=' . $own[$i]["serverid"] . '"><img src="pics/stop" width="30" height="30"></a>
-			<a class="disabled" href="update.php"><img src="pics/update" width="30" height="30"></a>
+			<a class="disabled" href="update.php?serverid=' . $own[$i]["serverid"] . '&type=' . $own[$i]["type"] . '"><img src="pics/update" width="30" height="30"></a>
 			<a class="disabled" href="options.php?serverid=' . $own[$i]["serverid"] . '&type=' . $own[$i]["type"] . '"><img src="pics/more" width="30" height="30"></a>
 			<form action="action.php?serverid=' .$own[$i]["serverid"] . '&type=' . $own[$i]["type"] . '" method="post">
 				<input type="text" name="cmd" placeholder="command" size="13"/>
@@ -96,7 +100,11 @@ $userid = $_SESSION['userid'];
 			//online status
 			if (strpos($outputls,$typus .$adm[$o]["serverid"]) !== false) {
 						$status = "online";
-					} else {
+					}
+					elseif (strpos($outputls,$typus. 'update' .$own[$i]["serverid"]) !== false) {
+											$status = "update";
+										}
+					 else {
 						$status = "offline";
 				}
 			if ($o == 4) {
@@ -114,7 +122,6 @@ $userid = $_SESSION['userid'];
 		 <br>
 			<a class="disabled" href="start.php?serverid=' . $adm[$o]["serverid"] . '"><img src="pics/play" width="30" height="30"></a>
 			<a class="disabled" href="stop.php?serverid=' . $adm[$o]["serverid"] . '"><img src="pics/stop" width="30" height="30"></a>
-			<a class="disabled" href="update.php"><img src="pics/update" width="30" height="30"></a>
 			<a class="disabled" href="options.php?serverid=' . $adm[$o]["serverid"] . '&type=' . $adm[$o]["type"] . '"><img src="pics/more" width="30" height="30"></a>
 			<form action="action.php?serverid=' .$adm[$o]["serverid"] . '&type=' . $adm[$o]["type"] . '" method="post">
 				<input type="text" name="cmd" placeholder="command" size="13"/>
@@ -122,5 +129,6 @@ $userid = $_SESSION['userid'];
 				<label for="submitter" class="la"><img class="otherimg" src="pics/arrow" width="30" height="30"></label><br>
 			</form>
 	</div>';
+	#update is missing here because of insecurity
 		}
 	}
