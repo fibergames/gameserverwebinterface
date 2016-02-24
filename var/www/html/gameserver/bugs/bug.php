@@ -1,9 +1,10 @@
 <?php
-include '../config.php';
+include("../direction.php");
 session_start();
 if(!isset($_SESSION['userid'])) {
 	die('Bitte zuerst <a href="login.php">einloggen</a>');
 }
+
 	$out = shell_exec('ls ' .$bugreports);;
 	$bugs = explode("\n", $out);
 	for ($i=0; $i <count($bugs)-1 ; $i++) {
@@ -11,16 +12,15 @@ if(!isset($_SESSION['userid'])) {
 		echo '<a href="inbug.php?bugid=' .$bugs[$i]. '">view</a>';
 		echo "<br>";
 	}
+
 if(isset($_POST['knop'])){ //check if form was submitted
 #mail('colinbusch98@gmx.de', 'CSWI BUGREPORT ' .$_POST['name'], $_POST['des']);
 $namebug = uniqid();
+echo 'Send an e-mail to colinbusch98@gmx.de with this subject ' .$namebug. ' if you want a faster bugfix.';
 $filename = $bugreports . $namebug .'_'. $_POST['name']. '.txt';
+#echo "$filename";
 file_put_contents($filename, $_POST['des']);
 chmod($filename, 0777);
-echo '
-	<head>
-	<meta http-equiv="refresh" content="0; url=bug.php"/>
-	</head>';
 }
  ?>
  <p>For images use <a href="http://imgur.com/">imgur</a> or <a href="https://app.prntscr.com/en/index.html">Lightshot</a> !<br>

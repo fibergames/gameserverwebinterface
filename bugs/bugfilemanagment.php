@@ -1,10 +1,10 @@
 <?php
-include '../direction.php';
+include '../config.php';
 session_start();
 if(!isset($_SESSION['userid'])) {
 	die('Bitte zuerst <a href="login.php">einloggen</a>');
 }
-if ($_SESSION['userid'] != 1) {
+if ($_SESSION['userid'] != $superuserid) {
   echo "You are not allowed to do this!";
   die;
 }

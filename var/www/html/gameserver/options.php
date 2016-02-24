@@ -9,7 +9,6 @@ if(!isset($_SESSION['userid'])) {
 //Abfrage der Nutzer ID vom Login
 $userid = $_SESSION['userid'];
 include 'auth.php';
-include 'config.php';
 ?>
 <html>
 <head>

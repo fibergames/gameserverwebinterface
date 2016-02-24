@@ -1,13 +1,13 @@
 <?php
-include 'config.php';
 $userid =  $_SESSION['userid'];
 $serverid = $_GET['serverid'];
 $userstm = '#' . $userid . '#';
-$pdo = new PDO($dsn, $dbuser, $pass);
+$pdo = new PDO('mysql:host=localhost;dbname=cswebin', 'root', 'bBmSV3Lfc3uK5q');
 $statement = $pdo->prepare("SELECT * FROM servers WHERE serverid = :serverid");
 $statement->bindParam(':serverid', $serverid);
-$statement->execute();
-$ips = $statement->fetch(PDO::FETCH_ASSOC);
+if($statement->execute()){
+  $ips = $statement->fetch(PDO::FETCH_ASSOC);
+}
 if ($ips['owner_id'] == $userid) {
     $auth = 1;
 }

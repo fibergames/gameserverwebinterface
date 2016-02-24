@@ -1,12 +1,9 @@
 <?php
-include '../direction.php';
+include '../config.php';
 session_start();
 if(!isset($_SESSION['userid'])) {
 	die('Bitte zuerst <a href="login.php">einloggen</a>');
 }
-//1 = view
-//2 = in progress
-//3 = complete
 echo '<a href="bugfilemanagment.php?bugid=' .$_GET['bugid']. '&action=1">Viewed</a>  __  ';
 echo '<a href="bugfilemanagment.php?bugid=' .$_GET['bugid']. '&action=2">In progress</a>  __  ';
 echo '<a href="bugfilemanagment.php?bugid=' .$_GET['bugid']. '&action=3">Complete</a>  __  ';

@@ -22,8 +22,9 @@ $userid = $_SESSION['userid'];
 		  $useruid =  $_SESSION['userid'];
 		//Sets some Var
 			$run ="steam://rungame/730/76561202255233023/+connect ";
-
-			$pdo = new PDO('mysql:host=localhost;dbname=cswebin', 'root', 'password');
+			include 'config.php';
+			#$pdo = new PDO('mysql:host=localhost;dbname=cswebin', 'root', 'password');
+			$pdo = new PDO($dsn, $dbuser, $pass);
 		//Catching number of owned Servers
 			$statement = $pdo->prepare("SELECT count(serverid) as num FROM servers WHERE owner_id = :useruid");
 			$statement->bindParam(':useruid', $useruid);
@@ -122,6 +123,7 @@ $userid = $_SESSION['userid'];
 		 <br>
 			<a class="disabled" href="start.php?serverid=' . $adm[$o]["serverid"] . '"><img src="pics/play" width="30" height="30"></a>
 			<a class="disabled" href="stop.php?serverid=' . $adm[$o]["serverid"] . '"><img src="pics/stop" width="30" height="30"></a>
+			<a class="disabled" href="update.php?serverid=' . $adm[$o]["serverid"] . '&type=' . $adm[$o]["type"] . '"><img src="pics/update" width="30" height="30"></a>
 			<a class="disabled" href="options.php?serverid=' . $adm[$o]["serverid"] . '&type=' . $adm[$o]["type"] . '"><img src="pics/more" width="30" height="30"></a>
 			<form action="action.php?serverid=' .$adm[$o]["serverid"] . '&type=' . $adm[$o]["type"] . '" method="post">
 				<input type="text" name="cmd" placeholder="command" size="13"/>

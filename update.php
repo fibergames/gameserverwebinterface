@@ -3,18 +3,12 @@ session_start();
 if(!isset($_SESSION['userid'])) {
 	die('Bitte zuerst <a href="login.php">einloggen</a>');
 }
-include 'direction.php';
+include 'config.php';
+include 'auth.php';
 //Abfrage der Nutzer ID vom Login
 $userid = $_SESSION['userid'];
 //runs the start.sh with some parameters
 $serverid = $_GET['serverid'];
-$userstm = '#' . $userid . '#';
-$pdo = new PDO('mysql:host=localhost;dbname=cswebin', 'root', 'password');
-$statement = $pdo->prepare("SELECT * FROM servers WHERE serverid = :serverid");
-$statement->bindParam(':serverid', $serverid);
-if($statement->execute()){
-    $ips = $statement->fetch(PDO::FETCH_ASSOC);
-}
 //Type Converter
 switch ($ips['type']) {
     case 1:
@@ -36,10 +30,10 @@ if (strpos($outputls,$ctype. 'update' .$serverid) !== false) {
 			$status = 0; //offline
 	}
 //Security checks
-if ($ips['owner_id'] == $userid) {
+if ($auth == 1) {
 		if ($status == 0)
 		{
-  echo "Server is going down...";
+  echo "Server is updating...";
   $out = shell_exec('screen -S ' . $ctype . $serverid . ' -X kill');
 	$out1 = shell_exec('screen -d -m -S ' .$ctype. 'update' .$serverid. ' ' .$direction1. '/' .$serverid. '/steamcmd.sh +runscript csgous.txt');
 	}
@@ -47,11 +41,16 @@ if ($ips['owner_id'] == $userid) {
 		echo "The server is already updating";
 				}
 			}
-elseif (preg_match($userstm, $ips['admin_id'])) {
-	echo "Server is going down...";
-#	$out = shell_exec('screen -S ' . $ctype . $serverid . ' -X kill');
-#  $out1 = shell_exec('screen -d -m -S csupdate' . $serverid . ' bash trade.sh' .$serverid. );
-#see dos very down to see why here is commented...
+elseif ($auth == 2) {
+				if ($status == 0)
+				{
+	echo "Server is updating...";
+	$out = shell_exec('screen -S ' . $ctype . $serverid . ' -X kill');
+	$out1 = shell_exec('screen -d -m -S ' .$ctype. 'update' .$serverid. ' ' .$direction1. '/' .$serverid. '/steamcmd.sh +runscript csgous.txt');
+}
+else {
+	echo "The server is already updating";
+			}
 }
 else {
   echo "You are not allowed to do this!";

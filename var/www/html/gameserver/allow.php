@@ -10,7 +10,7 @@ else {
   echo "You are not allowed to do this!";
   die;
 }
-$pdo = new PDO('mysql:host=localhost;dbname=cswebin', 'root', 'password');
+$pdo = new PDO('mysql:host=localhost;dbname=cswebin', 'root', 'bBmSV3Lfc3uK5q');
 if ($_REQUEST['newadmin'] != NULL){
   $admins = $ips['admin_id'] . $_REQUEST['newadmin']. '#';
   echo $admins;
@@ -22,6 +22,7 @@ if ($_REQUEST['newadmin'] != NULL){
 elseif ($_GET['admin_id'] != NULL) {
   $admins = str_replace('#' .$_GET['admin_id']. '#', "#", $ips['admin_id']);
   echo "$admins";
+  #$pdo = new PDO('mysql:host=localhost;dbname=cswebin', 'root', 'password');
   $stmee = $pdo->prepare("UPDATE servers SET admin_id = :admins WHERE serverid = :serverid");
   $stmee->bindParam(':admins', $admins, PDO::PARAM_STR);
   $stmee->bindParam(':serverid', $serverid);

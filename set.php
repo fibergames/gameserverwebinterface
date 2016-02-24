@@ -1,6 +1,6 @@
 <?php
 include 'auth.php';
-include 'direction.php';
+include 'config.php';
 if ($auth == 1) {
 }
 elseif ($auth == 2) {

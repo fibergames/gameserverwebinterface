@@ -1,6 +1,7 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=cswebin', 'root', 'password');
+include 'config.php';
+$pdo = new PDO($dsn, $dbuser, $pass);
 ?>
 <!DOCTYPE html>
 <html>

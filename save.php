@@ -1,5 +1,5 @@
 <?php
-include 'direction.php';
+include 'config.php';
 include 'auth.php';
 include 'set.php';
 if ($auth == 1) {
