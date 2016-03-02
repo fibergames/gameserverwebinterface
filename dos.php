@@ -102,7 +102,7 @@ $userid = $_SESSION['userid'];
 			if (strpos($outputls,$typus .$adm[$o]["serverid"]) !== false) {
 						$status = "online";
 					}
-					elseif (strpos($outputls,$typus. 'update' .$own[$i]["serverid"]) !== false) {
+					elseif (strpos($outputls,$typus. 'update' .$own[$o]["serverid"]) !== false) {
 											$status = "update";
 										}
 					 else {
